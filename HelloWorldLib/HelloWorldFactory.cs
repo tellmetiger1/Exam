@@ -12,6 +12,18 @@ namespace HelloWorldLib
     /// </summary>
     public class HelloWorldFactory
     {
+        public bool CanCreate()
+        {
+            if(string.IsNullOrEmpty(HelloWorldSettings.Default.TargetPlatform) == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Create a hello world obj based on the configured target platform
         /// </summary>
